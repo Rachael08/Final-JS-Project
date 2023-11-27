@@ -58,6 +58,9 @@ window.addEventListener("load", (e) =>{
     usersInfo.addEventListener("submit", (x) => {
         x.preventDefault();
         searchBtn.remove();
+        // tempText.add();
+        // weatherText.add();
+
 
         locationFinder(cityInput.value).then ((completeData) =>{
             if (completeData === 0 && !nameInput.value) {
@@ -77,8 +80,9 @@ window.addEventListener("load", (e) =>{
                 completeInfo.remove();
                 console.log(completeData)  
                 let greetings = document.querySelector(".greetings") 
-                let userDate = document.querySelector(".date")
+                let userDate =  document.querySelector(".date")
                 let userCity = document.querySelector(".city")
+                let weatherText = document.querySelector(".weather-text")
                 let weather1 = document.querySelector(".weather-condition1")
                 let weather2 = document.querySelector(".weather-condition2")
                 let temperature = document.querySelector(".current-temperature")
@@ -88,11 +92,44 @@ window.addEventListener("load", (e) =>{
 
                 greetings.textContent= `Hi! ${nameInput.value},`
                 userDate.textContent = `The time is ${dates.getHours()}:${dates.getMinutes()} at your current location.`
-                userCity.textContent = `${completeData[1].name}, ${completeData[0][0].name.common} `
+                userCity.textContent = `${completeData[1].name}, ${completeData[0][0].name.common}. `
                 weather1.textContent = `${completeData[1].weather[0].main}`
                 weather2.textContent = `${completeData[1].weather[0].description}`
                 temperature.textContent = `${convertedTemp(completeData[1].main.temp)} °C`
                 countryInfo.textContent = `${completeData[0][0].name.common} is a country in ${completeData[0][0].region}, with a Capital city called ${completeData[0][0].capital[0]}.`
+
+                
+
+                greetings.style.color ="green"
+                greetings.style.padding ="10px"
+                userDate.style.padding ="10px"
+                userDate.style.backgroundColor ="rgb(225, 245, 238)"
+                userDate.style.color ="black"
+                userDate.style.fontSize ="30px"
+                weatherText.style.padding ="10px"
+                weatherText.style.backgroundColor ="rgb(32, 78, 63)"
+                weatherText.style.color ="white"
+                weatherText.style.fontWeight ="10px"
+                weatherText.style.fontSize ="25px"
+                userCity.style.padding ="10px"
+                userCity.style.backgroundColor ="green"
+                userCity.style.fontSize ="30px"
+                userCity.style.fontWeight ="20px"
+                userCity.style.color ="white"
+                weather1.style.padding ="10px"
+                weather1.style.backgroundColor ="rgb(32, 78, 63)"
+                weather1.style.color ="white"
+                weather1.style.fontSize ="40px"
+                weather2.style.fontSize ="15px"
+                weather2.style.backgroundColor ="rgb(225, 245, 238)"
+                temperature.style.padding ="10px"
+                temperature.style.backgroundColor ="green"
+                temperature.style.color ="white"
+                temperature.style.fontWeight ="30px"
+                countryInfo.style.fontWeight ="20px"
+                countryInfo.style.fontSize ="30px"
+                countryInfo.style.backgroundColor ="rgb(32, 78, 63)"
+                countryInfo.style.color ="white"
 
             }
 

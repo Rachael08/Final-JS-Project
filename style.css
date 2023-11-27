@@ -3,10 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 100%;
+    
 }
 header {
-    height: 7vh;
+    
     background-color: rgb(32, 78, 63);
     text-align: center;
     padding: 10px;
@@ -15,9 +15,26 @@ header {
 }
 
 
+
+
 #main-container {
  align-content: center;
  text-align: center;
     padding: 10px
 }
+
+#users-info-div{
+padding: 40px;
+}
+
+#users-info-div  #users-name  {
+    background-color: rgb(225, 245, 238);
+    font-size: 15px;
+}
+
+#users-info-div  #users-city  {
+    background-color: rgb(225, 245, 238);
+    font-size: 15px;
+}
+
 
